@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Interior Design & Renovation Toronto | Renotect</title>
 <meta name="description" content="Renotect designs and renovates kitchens, bathrooms and full homes across Toronto and the GTA. BCIN-qualified designer: design, permit drawings and build coordination in one place.">
+<link rel="icon" href="images/logo.ico">
 <link rel="canonical" href="https://www.renotect.ca/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Interior Design & Renovation Toronto | Renotect">
@@ -21,7 +22,7 @@
 :root{--ink:#15191c;--paper:#f4f5f3;--card:#fff;--line:#d6d9d6;--accent:#2d5a52;--muted:#586064}
 @media(prefers-color-scheme:dark){:root{--ink:#eef0ee;--paper:#14181a;--card:#1b2023;--line:#2e3438;--accent:#7fc0b3;--muted:#a3abae}}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{font:400 17px/1.65 'Instrument Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink)}
 h1,h2,h3{font-family:'Bricolage Grotesque','Instrument Sans',sans-serif;line-height:1.1;letter-spacing:-.02em}
 a{color:inherit}
@@ -30,8 +31,10 @@ section{padding:88px 0}
 h2{font-size:clamp(30px,4vw,44px);margin-bottom:16px;max-width:18ch}
 .lead{color:var(--muted);max-width:60ch}
 header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font:700 22px 'Bricolage Grotesque',sans-serif;text-decoration:none;letter-spacing:-.02em}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:block;line-height:0}
+.logo img{height:52px;width:auto;display:block}
+@media(prefers-color-scheme:dark){.logo img{filter:invert(1)}}
 nav{display:flex;gap:26px;align-items:center;font-size:15px}
 nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 24px;border:0;border-radius:4px;font:600 16px 'Instrument Sans',sans-serif;text-decoration:none;cursor:pointer}
@@ -80,13 +83,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .services,.steps{grid-template-columns:1fr 1fr}
 .works{grid-template-columns:1fr;grid-template-rows:auto}.works figure:first-child{grid-row:auto}
 nav a:not(.btn){display:none}section{padding:64px 0}.two{grid-template-columns:1fr}}
-@media(max-width:560px){.services,.steps{grid-template-columns:1fr}}
+@media(max-width:560px){.services,.steps{grid-template-columns:1fr}.logo img{height:38px}header .wrap{gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-<a class="logo" href="#top">Renotect</a>
+<a class="logo" href="#top"><img src="images/logo-horizontal.png" alt="Renotect" width="246" height="62"></a>
 <nav><a href="#services">Services</a><a href="#works">Projects</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="btn" href="#contact">Book a consultation</a></nav>
 </div></header>
 
@@ -97,7 +100,7 @@ nav a:not(.btn){display:none}section{padding:64px 0}.two{grid-template-columns:1
 <p>Kitchens, bathrooms and full-home renovations across Toronto and the GTA. We handle the design, the permit drawings and the build coordination, so you deal with one team from first sketch to final walkthrough.</p>
 <div class="cta"><a class="btn" href="#contact">Book a consultation</a><a class="btn alt" href="#works">See our projects</a></div>
 </div>
-<img src="images/Kitchen-Silverfox-place.png" alt="Custom kitchen with built-in cabinetry designed by Renotect in Toronto" fetchpriority="high">
+<img src="images/bedroom-design.webp" alt="Warm bedroom interior with velvet headboard, burgundy throw, oak floors and natural light" fetchpriority="high">
 </div></section>
 
 <div class="trust"><div class="wrap"><ul>
