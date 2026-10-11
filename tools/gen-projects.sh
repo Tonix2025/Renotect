@@ -67,7 +67,7 @@ site-3|1280|721|Cabinetry and islands installed, with sage green lower cabinets 
 site-4|1280|721|Sage green cabinets and quartz counters under the long picture window
 site-5|1280|721|The cooking wall with built-in ovens and tall cabinets, seen past the island"
 SITE_INTRO[maple-modern-kitchen]="From framing in 2024, to the finished shell in 2025, to cabinets and counters going in at the start of 2026."
-declare -A BA=([maple-modern-kitchen]="maple-modern-kitchen-compare-design.jpg|1400|787|Design render of the kitchen|maple-modern-kitchen-compare-built.jpg|1280|721|The kitchen as installed on site")
+declare -A BA=([maple-modern-kitchen]="maple-modern-kitchen-compare-before.jpg|1280|721|The empty kitchen before cabinetry, with the floor membrane down|maple-modern-kitchen-compare-design.jpg|1400|787|Design render of the finished kitchen|Before|Design")
 declare -A MATS=([maple-modern-kitchen]="Cabinets|Sage green shaker
 Counters|Natural white quartz
 Backsplash|White marble
@@ -102,8 +102,8 @@ for i in "${!SLUGS[@]}"; do
   gallery+=$'\n'
   compare=""
   if [ -n "${BA[$s]}" ]; then
-    IFS="|" read -r da dw dh dalt ba bw bh balt <<< "${BA[$s]}"
-    compare="<div class=\"wrap\" style=\"padding-bottom:56px\"><h2 style=\"font-size:36px;margin:0\">Design and built</h2><p class=\"lead\">Drag the line to compare the render with the kitchen on site.</p><div class=\"ba\"><img src=\"/images/projects/$ba\" alt=\"$balt\" width=\"$bw\" height=\"$bh\" decoding=\"async\"><div class=\"ba-before\"><img src=\"/images/projects/$da\" alt=\"$dalt\" width=\"$dw\" height=\"$dh\" decoding=\"async\"></div><input type=\"range\" min=\"0\" max=\"100\" value=\"50\" aria-label=\"Compare the design render with the built kitchen\"><span class=\"ba-knob\" aria-hidden=\"true\">‹ ›</span><span class=\"ba-tag l\">Design</span><span class=\"ba-tag r\">Built</span></div></div>"
+    IFS="|" read -r da dw dh dalt ba bw bh balt tl tr <<< "${BA[$s]}"
+    compare="<div class=\"wrap\" style=\"padding-bottom:56px\"><h2 style=\"font-size:36px;margin:0\">Before and design</h2><p class=\"lead\">Drag the line to compare the empty room with the design.</p><div class=\"ba\"><img src=\"/images/projects/$ba\" alt=\"$balt\" width=\"$bw\" height=\"$bh\" decoding=\"async\"><div class=\"ba-before\"><img src=\"/images/projects/$da\" alt=\"$dalt\" width=\"$dw\" height=\"$dh\" decoding=\"async\"></div><input type=\"range\" min=\"0\" max=\"100\" value=\"50\" aria-label=\"Compare the room before with the design\"><span class=\"ba-knob\" aria-hidden=\"true\">‹ ›</span><span class=\"ba-tag l\">$tl</span><span class=\"ba-tag r\">$tr</span></div></div>"
   fi
   mats=""
   if [ -n "${MATS[$s]}" ]; then
