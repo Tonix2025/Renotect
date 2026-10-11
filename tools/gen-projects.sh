@@ -1,9 +1,9 @@
 #!/bin/bash
 # Builds projects/<slug>/index.html from the data below. Run from the repo root.
 set -e
-SLUGS=(north-york-custom-home silverfox-custom-home silverfox-kitchen skylight-bathroom oak-green-kitchen custom-vanities)
+SLUGS=(north-york-custom-home silverfox-custom-home silverfox-kitchen skylight-bathroom custom-vanities)
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
-declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [skylight-bathroom]="Residential" [silverfox-kitchen]="Millwork &amp; Kitchen" [oak-green-kitchen]="Millwork &amp; Kitchen" [custom-vanities]="Millwork &amp; Kitchen")
+declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [skylight-bathroom]="Residential" [silverfox-kitchen]="Millwork &amp; Kitchen" [custom-vanities]="Millwork &amp; Kitchen")
 
 NAME[north-york-custom-home]="Custom home facade, North York"
 TITLE[north-york-custom-home]="Custom Home Facade Design, North York"
@@ -32,12 +32,6 @@ IMGS[skylight-bathroom]="1|928|1232|Bathroom with skylight, floating oak vanity,
 2|928|1232|Floating vanity with open shelf and toe-kick lighting beside the shower
 3|928|1232|Oak vanity drawers, backlit mirror and shower niche under the skylight"
 
-NAME[oak-green-kitchen]="Oak and green kitchen"
-TITLE[oak-green-kitchen]="Oak and Green Kitchen Design, Toronto"
-DESC[oak-green-kitchen]="Toronto kitchen design pairing deep green shaker cabinetry with warm oak: oak island, lit open shelving, tall pantry towers and a farmhouse sink."
-INTRO[oak-green-kitchen]="Deep green shaker cabinetry paired with warm oak: an oak-topped island, lit oak open shelving and wide-plank floors. Tall pantry and oven towers keep storage on one wall, and a farmhouse sink sits under the window."
-TYPE[oak-green-kitchen]="Kitchen renovation"; LOC[oak-green-kitchen]="Toronto"; SCOPE[oak-green-kitchen]="Kitchen design, custom millwork"
-IMGS[oak-green-kitchen]="1|1600|719|Green shaker kitchen with an oak island, open shelving and under-cabinet lighting"
 
 NAME[custom-vanities]="Custom vanities"
 TITLE[custom-vanities]="Custom Bathroom Vanity Designs, Toronto"
