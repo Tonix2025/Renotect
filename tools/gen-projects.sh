@@ -15,10 +15,10 @@ IMGS[north-york-custom-home]="1|1600|900|Front elevation of the custom home in d
 3|1600|900|Close-up of the upper window, stone surround and lit soffits"
 
 NAME[green-kitchen-island]="Sage green kitchen with island"
-TITLE[green-kitchen-island]="Sage Green Kitchen with Island, Kitchen Design"
-DESC[green-kitchen-island]="Kitchen design with sage green shaker cabinetry, a large island with seating, built-in appliances and layered lighting, by Renotect in the GTA."
+TITLE[green-kitchen-island]="Sage Green Kitchen with Island, Vaughan"
+DESC[green-kitchen-island]="Kitchen design for a custom home in Vaughan: sage green shaker cabinetry, a large island with seating, built-in appliances and layered lighting, by Renotect."
 INTRO[green-kitchen-island]="A kitchen planned around a long island with seating for four. Sage green shaker cabinets run to the ceiling, with the fridge, wall oven and coffee station built in flush. A tray ceiling with cove lighting, under-cabinet LEDs and glass pendants layer the light for cooking and for evenings."
-TYPE[green-kitchen-island]="Kitchen renovation"; LOC[green-kitchen-island]="Greater Toronto Area"; SCOPE[green-kitchen-island]="Layout, custom cabinetry, lighting design"
+TYPE[green-kitchen-island]="Kitchen for a new custom home"; LOC[green-kitchen-island]="Vaughan, Ontario"; SCOPE[green-kitchen-island]="Layout, custom cabinetry, lighting design"
 IMGS[green-kitchen-island]="1|1403|1121|Sage green kitchen with a large island, bar stools and full-height cabinetry
 2|1402|1122|Two views of the kitchen: the island and window wall, and the gas range with open shelves"
 
@@ -48,11 +48,11 @@ IMGS[custom-vanities]="1|1024|1024|Green double vanity with drawers, stone top a
 3|1600|1600|Floating olive vanity with three arched backlit mirrors"
 
 # Construction photos (optional per project): "site-N|width|height|alt", files images/projects/<slug>-site-N.jpg
-NAME[silverfox-custom-home]="Silverfox Place custom home"
-TITLE[silverfox-custom-home]="Modern Custom Home, Silverfox Place, Construction"
-DESC[silverfox-custom-home]="Construction photos of a new two-storey modern custom home on Silverfox Place, with a flat roof, deep overhangs, large black-framed windows and a walk-out lower level."
-INTRO[silverfox-custom-home]="A new two-storey modern home on Silverfox Place, with a low flat roof, deep overhangs, large black-framed windows and a walk-out lower level. These photos were taken on site during construction, with the walls sheathed and wrapped and the windows installed."
-TYPE[silverfox-custom-home]="New custom home"; LOC[silverfox-custom-home]="Greater Toronto Area"; SCOPE[silverfox-custom-home]=""
+NAME[silverfox-custom-home]="Silverfox Place custom home, Vaughan"
+TITLE[silverfox-custom-home]="Modern 6,000 sq ft Custom Home in Vaughan"
+DESC[silverfox-custom-home]="A modern 6,000 sq ft custom home on Silverfox Place in Vaughan, Ontario. Renotect designed the interiors and the facade and oversaw construction on site."
+INTRO[silverfox-custom-home]="A new modern home of about 6,000 sq ft on Silverfox Place in Vaughan, Ontario, with a low flat roof, deep overhangs, large black-framed windows and a walk-out lower level. Renotect designed the interiors and the exterior facade, and oversaw the work on site through construction so the build followed the design."
+TYPE[silverfox-custom-home]="New custom home, approx. 6,000 sq ft"; LOC[silverfox-custom-home]="Vaughan, Ontario"; SCOPE[silverfox-custom-home]="Interior design, facade design, construction oversight"
 IMGS[silverfox-custom-home]=""
 
 declare -A SITE SITE_INTRO
@@ -70,8 +70,8 @@ site-7|721|1280|Tall view of the side of the house across all three levels
 site-8|721|1280|Side wall in sunlight, with windows installed and the house wrap on
 site-9|721|1280|Corner of the house with the roof overhang and lower-level windows
 site-10|721|1280|Stone cladding starting at the base of the wall"
-SITE_INTRO[silverfox-custom-home]="Photos from site during construction, after the windows went in and before the exterior finishes."
-declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/green-kitchen-island/\">Sage green kitchen with island</a>" [green-kitchen-island]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home</a>")
+SITE_INTRO[silverfox-custom-home]="Photos from site visits during construction, after the windows went in and before the exterior finishes."
+declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/green-kitchen-island/\">Sage green kitchen with island</a>" [green-kitchen-island]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home in Vaughan</a>")
 
 items() { # slug, data, first-image-eager(1/0)
   local out="" n w h alt lazy
