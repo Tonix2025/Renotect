@@ -184,7 +184,7 @@
 <script>
 // Paste your Formspree (or similar) endpoint here, e.g. "https://formspree.io/f/xxxxxxx".
 // While empty, the form opens the visitor's email app with the message pre-filled.
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formspree.io/f/mvkzqwey";
 const f = document.getElementById('f'), st = document.getElementById('status');
 f.addEventListener('submit', async e => {
   e.preventDefault();
@@ -193,6 +193,7 @@ f.addEventListener('submit', async e => {
     st.textContent = 'Please add your name, a valid email and a few project details.'; return;
   }
   const d = Object.fromEntries(new FormData(f)); delete d.website;
+  d._subject = "Website request: " + d.service;
   if (!FORM_ENDPOINT) {
     const body = `Name: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone||''}\nService: ${d.service}\n\n${d.message}`;
     location.href = 'mailto:info@renotect.ca?subject=' + encodeURIComponent('Project inquiry: ' + d.service) + '&body=' + encodeURIComponent(body);
