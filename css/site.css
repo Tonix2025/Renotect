@@ -139,3 +139,8 @@ body{padding-bottom:52px}
 }
 @media(max-width:560px){.why{grid-template-columns:1fr}}
 @media(prefers-color-scheme:dark){.band{background:#1f3b36}.btn.light{color:#1f3b36}}
+.timeline{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.timeline li{border-top:1px solid var(--ink);padding-top:18px}
+.timeline b{display:block;font:300 52px/1 'Cormorant Garamond',Georgia,serif;color:var(--accent);margin-bottom:12px}
+.timeline h3{font-size:25px;font-weight:500;margin-bottom:8px}.timeline p{color:var(--muted);font-size:15.5px}
+@media(max-width:860px){.timeline{grid-template-columns:1fr;gap:22px;margin-top:40px}}
