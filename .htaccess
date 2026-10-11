@@ -4,6 +4,9 @@ RewriteCond %{HTTP_HOST} ^renotect\.ca$ [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://www.renotect.ca/$1 [R=301,L]
 
+# Build scripts in the repo are not part of the website
+RedirectMatch 404 ^/tools/
+
 # Images, CSS and JS are cached for a year (CSS/JS links carry ?v= so changes still show).
 # HTML is always re-checked so updates appear right away.
 <IfModule mod_expires.c>
