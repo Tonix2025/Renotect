@@ -110,3 +110,4 @@ nav a:not(.btn){padding:17px 0;border-bottom:1px solid var(--line);color:var(--i
 nav .nav-tel{display:block;color:var(--accent)}
 nav .btn{margin-top:22px;text-align:center;padding:16px 20px;font-size:12.5px}
 }
+.related{margin-top:14px;color:var(--muted)}.related a{color:var(--accent)}

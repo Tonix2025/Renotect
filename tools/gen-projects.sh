@@ -1,9 +1,9 @@
 #!/bin/bash
 # Builds projects/<slug>/index.html from the data below. Run from the repo root.
 set -e
-SLUGS=(north-york-custom-home green-kitchen-island skylight-bathroom oak-green-kitchen custom-vanities)
+SLUGS=(north-york-custom-home silverfox-custom-home green-kitchen-island skylight-bathroom oak-green-kitchen custom-vanities)
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
-declare -A CAT=([north-york-custom-home]="Residential" [skylight-bathroom]="Residential" [green-kitchen-island]="Millwork &amp; Kitchen" [oak-green-kitchen]="Millwork &amp; Kitchen" [custom-vanities]="Millwork &amp; Kitchen")
+declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [skylight-bathroom]="Residential" [green-kitchen-island]="Millwork &amp; Kitchen" [oak-green-kitchen]="Millwork &amp; Kitchen" [custom-vanities]="Millwork &amp; Kitchen")
 
 NAME[north-york-custom-home]="Custom home facade, North York"
 TITLE[north-york-custom-home]="Custom Home Facade Design, North York"
@@ -48,11 +48,30 @@ IMGS[custom-vanities]="1|1024|1024|Green double vanity with drawers, stone top a
 3|1600|1600|Floating olive vanity with three arched backlit mirrors"
 
 # Construction photos (optional per project): "site-N|width|height|alt", files images/projects/<slug>-site-N.jpg
+NAME[silverfox-custom-home]="Silverfox Place custom home"
+TITLE[silverfox-custom-home]="Modern Custom Home, Silverfox Place, Construction"
+DESC[silverfox-custom-home]="Construction photos of a new two-storey modern custom home on Silverfox Place, with a flat roof, deep overhangs, large black-framed windows and a walk-out lower level."
+INTRO[silverfox-custom-home]="A new two-storey modern home on Silverfox Place, with a low flat roof, deep overhangs, large black-framed windows and a walk-out lower level. These photos were taken on site during construction, with the walls sheathed and wrapped and the windows installed."
+TYPE[silverfox-custom-home]="New custom home"; LOC[silverfox-custom-home]="Greater Toronto Area"; SCOPE[silverfox-custom-home]=""
+IMGS[silverfox-custom-home]=""
+
 declare -A SITE SITE_INTRO
 SITE[north-york-custom-home]="site-3|1280|677|Front of the house during construction, with the third-floor dormers framed and the walls sheathed
 site-2|1280|677|Angled view of the framed and sheathed house, showing the dormer framing and roof trusses
 site-1|1280|721|Closer view of the front during construction, with window openings boarded and the front steps in place"
 SITE_INTRO[north-york-custom-home]="Photos from site during construction, with the upper floors framed and sheathed."
+SITE[silverfox-custom-home]="site-1|1280|721|Front of the modern home during construction, with the windows installed and the walls wrapped
+site-2|1280|721|Wide view of the front elevation, showing the deep roof overhang and the walk-out lower level
+site-3|1280|721|Front of the house with large upper windows and the entry framed, during construction
+site-4|1280|721|Upper floor wrapped in house wrap, with black-framed windows in place
+site-5|1280|721|Side elevation with large window openings on both levels
+site-6|1280|721|Corner of the house with the cantilevered upper floor and balcony framing
+site-7|721|1280|Tall view of the side of the house across all three levels
+site-8|721|1280|Side wall in sunlight, with windows installed and the house wrap on
+site-9|721|1280|Corner of the house with the roof overhang and lower-level windows
+site-10|721|1280|Stone cladding starting at the base of the wall"
+SITE_INTRO[silverfox-custom-home]="Photos from site during construction, after the windows went in and before the exterior finishes."
+declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/green-kitchen-island/\">Sage green kitchen with island</a>" [green-kitchen-island]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home</a>")
 
 items() { # slug, data, first-image-eager(1/0)
   local out="" n w h alt lazy
@@ -70,7 +89,12 @@ for i in "${!SLUGS[@]}"; do
   url="https://www.renotect.ca/projects/$s/"
   mkdir -p "projects/$s"
   gallery=$(items "$s" "${IMGS[$s]}" 1)
-  if [ -n "${SITE[$s]}" ]; then
+  first="$s-1"; [ -z "${IMGS[$s]}" ] && first="$s-site-1"
+  if [ -n "${SITE[$s]}" ] && [ -z "${IMGS[$s]}" ]; then
+    gallery="<h2>On site</h2>"$'
+'"<p class=\"lead\">${SITE_INTRO[$s]}</p>"$'
+'"$(items "$s" "${SITE[$s]}" 1)"
+  elif [ -n "${SITE[$s]}" ]; then
     gallery="<h2>Design</h2>"$'\n'"$gallery"$'\n'"<h2>On site</h2>"$'\n'"<p class=\"lead\">${SITE_INTRO[$s]}</p>"$'\n'"$(items "$s" "${SITE[$s]}" 0)"
   fi
   gallery+=$'\n'
@@ -92,16 +116,16 @@ for i in "${!SLUGS[@]}"; do
 <meta property="og:title" content="${NAME[$s]} | Renotect">
 <meta property="og:description" content="${DESC[$s]}">
 <meta property="og:url" content="$url">
-<meta property="og:image" content="https://www.renotect.ca/images/projects/$s-1.jpg">
+<meta property="og:image" content="https://www.renotect.ca/images/projects/$first.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=5">
+<link rel="stylesheet" href="/css/site.css?v=6">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},
-{"@type":"CreativeWork","name":"${NAME[$s]}","description":"${DESC[$s]}","url":"$url","image":"https://www.renotect.ca/images/projects/$s-1.jpg","creator":{"@id":"https://www.renotect.ca/#business"},"locationCreated":{"@type":"Place","name":"${LOC[$s]}"}}
+{"@type":"CreativeWork","name":"${NAME[$s]}","description":"${DESC[$s]}","url":"$url","image":"https://www.renotect.ca/images/projects/$first.jpg","creator":{"@id":"https://www.renotect.ca/#business"},"locationCreated":{"@type":"Place","name":"${LOC[$s]}"}}
 ]}
 </script>
 </head>
@@ -116,8 +140,8 @@ for i in "${!SLUGS[@]}"; do
 <section class="project-hero"><div class="wrap">
 <p class="crumbs"><a href="/">Home</a> / <a href="/#works">Projects</a> / ${NAME[$s]}</p>
 <h1>${NAME[$s]}</h1>
-<p>${INTRO[$s]}</p>
-<ul class="facts"><li><b>Category</b>${CAT[$s]}</li><li><b>Project</b>${TYPE[$s]}</li><li><b>Location</b>${LOC[$s]}</li><li><b>Scope</b>${SCOPE[$s]}</li></ul>
+<p>${INTRO[$s]}</p>${RELATED[$s]:+<p class="related">${RELATED[$s]}</p>}
+<ul class="facts"><li><b>Category</b>${CAT[$s]}</li><li><b>Project</b>${TYPE[$s]}</li><li><b>Location</b>${LOC[$s]}</li>${SCOPE[$s]:+<li><b>Scope</b>${SCOPE[$s]}</li>}</ul>
 </div></section>
 
 <div class="wrap gallery">
