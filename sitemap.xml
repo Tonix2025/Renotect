@@ -13,12 +13,6 @@
     <image:image><image:loc>https://www.renotect.ca/images/projects/custom-vanities-3.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.renotect.ca/projects/green-kitchen-island/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <image:image><image:loc>https://www.renotect.ca/images/projects/green-kitchen-island-1.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.renotect.ca/images/projects/green-kitchen-island-2.jpg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.renotect.ca/projects/north-york-custom-home/</loc>
     <lastmod>2026-10-11</lastmod>
     <image:image><image:loc>https://www.renotect.ca/images/projects/north-york-custom-home-1.jpg</image:loc></image:image>
@@ -38,6 +32,9 @@
     <lastmod>2026-10-11</lastmod>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-1.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-10.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-11.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-12.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-13.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-2.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-3.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-4.jpg</image:loc></image:image>
@@ -46,6 +43,18 @@
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-7.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-8.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-custom-home-site-9.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.renotect.ca/projects/silverfox-kitchen/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-3.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-site-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-site-2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-site-3.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-site-4.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.renotect.ca/images/projects/silverfox-kitchen-site-5.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.renotect.ca/projects/skylight-bathroom/</loc>
