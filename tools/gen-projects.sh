@@ -45,10 +45,10 @@ IMGS[custom-vanities]="1|1024|1024|Green double vanity with drawers, stone top a
 # Construction photos (optional per project): "site-N|width|height|alt", files images/projects/<slug>-site-N.jpg
 NAME[silverfox-custom-home]="Silverfox Place custom home, Vaughan"
 TITLE[silverfox-custom-home]="Modern 6,000 sq ft Custom Home in Vaughan"
-DESC[silverfox-custom-home]="A modern 6,000 sq ft custom home on Silverfox Place in Vaughan, Ontario. Renotect designed the interiors and the facade and oversaw construction on site."
-INTRO[silverfox-custom-home]="A new modern home of about 6,000 sq ft on Silverfox Place in Vaughan, Ontario, with a low flat roof, deep overhangs, large black-framed windows and a walk-out lower level. Renotect designed the interiors and the exterior facade, and oversaw the work on site through construction so the build followed the design."
+DESC[silverfox-custom-home]="A modern 6,000 sq ft custom home on Silverfox Place in Vaughan: black aluminum, floated wood panels and a white stone base. Interior and facade design and construction oversight by Renotect."
+INTRO[silverfox-custom-home]="A modern home of about 6,000 sq ft on Silverfox Place in Vaughan, Ontario. The facade is built from clean geometry and a tight palette: black aluminum cladding frames the structure, floated wood panels add warmth and a vertical rhythm to the upper floor, a white stone base grounds the house, and silver aluminum trim sharpens the edges. Wall-mounted lights wash the materials and mark the entries after dark. Renotect designed the interiors and the facade, and oversaw the work on site through construction so the build followed the design."
 TYPE[silverfox-custom-home]="New custom home, approx. 6,000 sq ft"; LOC[silverfox-custom-home]="Vaughan, Ontario"; SCOPE[silverfox-custom-home]="Interior design, facade design, construction oversight"
-IMGS[silverfox-custom-home]=""
+IMGS[silverfox-custom-home]="1|1800|670|Render of the front facade: black aluminum, floated wood panels, white stone base and a flat roof with deep overhangs"
 
 declare -A SITE SITE_INTRO
 SITE[north-york-custom-home]="site-3|1280|677|Front of the house during construction, with the third-floor dormers framed and the walls sheathed
@@ -86,7 +86,8 @@ items() { # slug, data, first-image-eager(1/0)
   while IFS='|' read -r n w h alt; do
     [ -z "$n" ] && continue
     lazy=' loading="lazy"'; [ "$3" = 1 ] && [ "$n" = 1 ] && lazy=""
-    out+="<button type=\"button\" data-full=\"/images/projects/$1-$n.jpg\" aria-label=\"View larger image\"><img src=\"/images/projects/$1-$n-sm.jpg\" alt=\"$alt\" width=\"800\" height=\"$(( h*800/w ))\" decoding=\"async\"$lazy></button>"$'\n'
+    sm="-sm"; cls=""; [ $(( w * 10 / h )) -ge 20 ] && { cls=" class=\"wide\""; sm=""; }
+    out+="<button type=\"button\"$cls data-full=\"/images/projects/$1-$n.jpg\" aria-label=\"View larger image\"><img src=\"/images/projects/$1-$n$sm.jpg\" alt=\"$alt\" width=\"$( [ -z "$sm" ] && echo $w || echo 800 )\" height=\"$( [ -z "$sm" ] && echo $h || echo $(( h*800/w )) )\" decoding=\"async\"$lazy></button>"$'\n'
   done <<< "$2"
   printf '%s' "$out"
 }
@@ -134,7 +135,7 @@ for i in "${!SLUGS[@]}"; do
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=6">
+<link rel="stylesheet" href="/css/site.css?v=7">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},
