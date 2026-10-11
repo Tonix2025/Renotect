@@ -1,9 +1,9 @@
 #!/bin/bash
 # Builds projects/<slug>/index.html from the data below. Run from the repo root.
 set -e
-SLUGS=(north-york-custom-home silverfox-custom-home silverfox-kitchen custom-millwork)
+SLUGS=(north-york-custom-home silverfox-custom-home maple-modern-kitchen custom-millwork)
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
-declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [silverfox-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
+declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [maple-modern-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
 
 NAME[north-york-custom-home]="Custom home facade, North York"
 TITLE[north-york-custom-home]="Custom Home Facade Design, North York"
@@ -14,12 +14,12 @@ IMGS[north-york-custom-home]="1|1600|900|Front elevation of the custom home in d
 2|1600|900|The same facade at dusk with soffit lights and wall sconces on
 3|1600|900|Close-up of the upper window, stone surround and lit soffits"
 
-NAME[silverfox-kitchen]="Silverfox Place kitchen, Vaughan"
-TITLE[silverfox-kitchen]="Sage Green Custom Kitchen, Vaughan: Design to Install"
-DESC[silverfox-kitchen]="Custom kitchen for a 6,000 sq ft home in Vaughan: sage green shaker cabinetry, quartz and marble, warm wood and aged brass. From concept and renders to installation on site."
-INTRO[silverfox-kitchen]="The kitchen of the Silverfox Place custom home in Vaughan. The concept pairs muted sage green shaker cabinetry with warm wood, light quartz and marble, and aged brass, for a calm room that will still feel right in twenty years. A long island with seating faces the cooking wall, tall cabinets keep the fridge, ovens and pantry built in flush, and a long picture window opens the room to the garden. The photos follow it from the first renders to cabinets and counters going in."
-TYPE[silverfox-kitchen]="Kitchen for a new custom home"; LOC[silverfox-kitchen]="Vaughan, Ontario"; SCOPE[silverfox-kitchen]="Kitchen design, cabinetry and materials, site oversight"
-IMGS[silverfox-kitchen]="1|1403|1121|Sage green kitchen with a large island, bar stools and full-height cabinetry
+NAME[maple-modern-kitchen]="Maple Modern Kitchen"
+TITLE[maple-modern-kitchen]="Maple Modern Kitchen, Vaughan: Design to Install"
+DESC[maple-modern-kitchen]="Maple Modern Kitchen in Vaughan: sage green shaker cabinetry, quartz and marble, warm wood and aged brass, for a 6,000 sq ft custom home. From concept and renders to installation."
+INTRO[maple-modern-kitchen]="A modern kitchen for a 6,000 sq ft custom home in Vaughan. The concept pairs muted sage green shaker cabinetry with warm wood, light quartz and marble, and aged brass, for a calm room that will still feel right in twenty years. A long island with seating faces the cooking wall, tall cabinets keep the fridge, ovens and pantry built in flush, and a long picture window opens the room to the garden. The photos follow it from the first renders to cabinets and counters going in."
+TYPE[maple-modern-kitchen]="Kitchen for a new custom home"; LOC[maple-modern-kitchen]="Vaughan, Ontario"; SCOPE[maple-modern-kitchen]="Kitchen design, cabinetry and materials, site oversight"
+IMGS[maple-modern-kitchen]="1|1403|1121|Sage green kitchen with a large island, bar stools and full-height cabinetry
 2|1402|1122|Two views of the kitchen: the island and window wall, and the gas range with open shelves
 3|1500|1060|Design concept board with the colour palette, materials and finishes, inspiration images and cabinet elevations"
 
@@ -61,17 +61,18 @@ site-11|1280|721|Side of the house with the large lower-level windows installed
 site-12|721|1280|Front entry and steps, with the upper balcony framed
 site-13|1280|721|Side entry steps and the wrapped walls, with the woods behind the house"
 SITE_INTRO[silverfox-custom-home]="Photos from site visits during construction, after the windows went in and before the exterior finishes."
-SITE[silverfox-kitchen]="site-1|1280|721|The kitchen area during framing, with the long window already in place
+SITE[maple-modern-kitchen]="site-1|1280|721|The kitchen area during framing, with the long window already in place
 site-2|1280|721|The kitchen as an empty shell, with the ceiling details built and the floor prepared
 site-3|1280|721|Cabinetry and islands installed, with sage green lower cabinets and tall taupe units
 site-4|1280|721|Sage green cabinets and quartz counters under the long picture window
 site-5|1280|721|The cooking wall with built-in ovens and tall cabinets, seen past the island"
-SITE_INTRO[silverfox-kitchen]="From framing in 2024, to the finished shell in 2025, to cabinets and counters going in at the start of 2026."
-declare -A MATS=([silverfox-kitchen]="Cabinets|Sage green shaker
+SITE_INTRO[maple-modern-kitchen]="From framing in 2024, to the finished shell in 2025, to cabinets and counters going in at the start of 2026."
+declare -A BA=([maple-modern-kitchen]="maple-modern-kitchen-compare-design.jpg|1400|787|Design render of the kitchen|maple-modern-kitchen-compare-built.jpg|1280|721|The kitchen as installed on site")
+declare -A MATS=([maple-modern-kitchen]="Cabinets|Sage green shaker
 Counters|Natural white quartz
 Backsplash|White marble
 Accents|Warm wood wall and ceiling, aged brass hardware")
-declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/silverfox-kitchen/\">Sage green kitchen with island</a>" [silverfox-kitchen]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home in Vaughan</a>")
+declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/maple-modern-kitchen/\">Maple Modern Kitchen</a>" [maple-modern-kitchen]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home in Vaughan</a>")
 
 items() { # slug, data, first-image-eager(1/0)
   local out="" n w h alt lazy
@@ -99,6 +100,11 @@ for i in "${!SLUGS[@]}"; do
     gallery="<h2>Design</h2>"$'\n'"$gallery"$'\n'"<h2>On site</h2>"$'\n'"<p class=\"lead\">${SITE_INTRO[$s]}</p>"$'\n'"$(items "$s" "${SITE[$s]}" 0)"
   fi
   gallery+=$'\n'
+  compare=""
+  if [ -n "${BA[$s]}" ]; then
+    IFS="|" read -r da dw dh dalt ba bw bh balt <<< "${BA[$s]}"
+    compare="<div class=\"wrap\" style=\"padding-bottom:56px\"><h2 style=\"font-size:36px;margin:0\">Design and built</h2><p class=\"lead\">Drag the line to compare the render with the kitchen on site.</p><div class=\"ba\"><img src=\"/images/projects/$ba\" alt=\"$balt\" width=\"$bw\" height=\"$bh\" decoding=\"async\"><div class=\"ba-before\"><img src=\"/images/projects/$da\" alt=\"$dalt\" width=\"$dw\" height=\"$dh\" decoding=\"async\"></div><input type=\"range\" min=\"0\" max=\"100\" value=\"50\" aria-label=\"Compare the design render with the built kitchen\"><span class=\"ba-knob\" aria-hidden=\"true\">‹ ›</span><span class=\"ba-tag l\">Design</span><span class=\"ba-tag r\">Built</span></div></div>"
+  fi
   mats=""
   if [ -n "${MATS[$s]}" ]; then
     while IFS='|' read -r k v; do mats+="<li><b>$k</b>$v</li>"; done <<< "${MATS[$s]}"
@@ -127,7 +133,7 @@ for i in "${!SLUGS[@]}"; do
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=9">
+<link rel="stylesheet" href="/css/site.css?v=10">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},
@@ -151,6 +157,7 @@ for i in "${!SLUGS[@]}"; do
 <ul class="facts"><li><b>Category</b>${CAT[$s]}</li><li><b>Project</b>${TYPE[$s]}</li><li><b>Location</b>${LOC[$s]}</li>${SCOPE[$s]:+<li><b>Scope</b>${SCOPE[$s]}</li>}</ul>${mats}
 </div></section>
 
+${compare}
 <div class="wrap gallery">
 ${gallery}</div>
 
@@ -166,7 +173,7 @@ ${gallery}</div>
 <footer><div class="wrap"><span>&copy; 2026 Renotect. Interior design and renovation, Etobicoke, Toronto, Ontario.</span><span><a href="tel:+14372549794">(437) 254-9794</a> · <a href="mailto:info@renotect.ca">info@renotect.ca</a></span></div></footer>
 
 <dialog class="lb" aria-label="Image viewer"><figure><img alt=""><figcaption></figcaption></figure><button class="x" type="button" aria-label="Close">&times;</button><button class="prev" type="button" aria-label="Previous image">&#8249;</button><button class="next" type="button" aria-label="Next image">&#8250;</button></dialog>
-<script src="/js/site.js?v=1" defer></script>
+<script src="/js/site.js?v=2" defer></script>
 <script src="/js/gallery.js?v=2" defer></script>
 </body>
 </html>

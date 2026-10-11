@@ -8,8 +8,9 @@ RewriteRule ^(.*)$ https://www.renotect.ca/$1 [R=301,L]
 RedirectMatch 404 ^/tools/
 
 # Old project address
-Redirect 301 /projects/green-kitchen-island/ https://www.renotect.ca/projects/silverfox-kitchen/
-Redirect 301 /projects/oak-green-kitchen/ https://www.renotect.ca/projects/silverfox-kitchen/
+Redirect 301 /projects/green-kitchen-island/ https://www.renotect.ca/projects/maple-modern-kitchen/
+Redirect 301 /projects/oak-green-kitchen/ https://www.renotect.ca/projects/maple-modern-kitchen/
+Redirect 301 /projects/silverfox-kitchen/ https://www.renotect.ca/projects/maple-modern-kitchen/
 Redirect 301 /projects/custom-vanities/ https://www.renotect.ca/projects/custom-millwork/
 Redirect 301 /projects/skylight-bathroom/ https://www.renotect.ca/
 
