@@ -1,9 +1,9 @@
 #!/bin/bash
 # Builds projects/<slug>/index.html from the data below. Run from the repo root.
 set -e
-SLUGS=(north-york-custom-home silverfox-custom-home silverfox-kitchen skylight-bathroom custom-vanities)
+SLUGS=(north-york-custom-home silverfox-custom-home silverfox-kitchen custom-millwork)
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
-declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [skylight-bathroom]="Residential" [silverfox-kitchen]="Millwork &amp; Kitchen" [custom-vanities]="Millwork &amp; Kitchen")
+declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [silverfox-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
 
 NAME[north-york-custom-home]="Custom home facade, North York"
 TITLE[north-york-custom-home]="Custom Home Facade Design, North York"
@@ -23,22 +23,14 @@ IMGS[silverfox-kitchen]="1|1403|1121|Sage green kitchen with a large island, bar
 2|1402|1122|Two views of the kitchen: the island and window wall, and the gas range with open shelves
 3|1500|1060|Design concept board with the colour palette, materials and finishes, inspiration images and cabinet elevations"
 
-NAME[skylight-bathroom]="Skylight bathroom"
-TITLE[skylight-bathroom]="Skylight Bathroom Renovation, Bathroom Design"
-DESC[skylight-bathroom]="Bathroom design with a skylight, floating oak vanity, backlit mirror, large-format tile and frameless glass shower, by Renotect in the GTA."
-INTRO[skylight-bathroom]="A bathroom designed around natural light from a skylight. A floating oak vanity with an open shelf and toe-kick lighting, a backlit mirror, large-format porcelain tile and a frameless glass shower keep the room bright, calm and easy to clean."
-TYPE[skylight-bathroom]="Bathroom renovation"; LOC[skylight-bathroom]="Greater Toronto Area"; SCOPE[skylight-bathroom]="Layout, vanity, tile and lighting"
-IMGS[skylight-bathroom]="1|928|1232|Bathroom with skylight, floating oak vanity, backlit mirror and glass shower
-2|928|1232|Floating vanity with open shelf and toe-kick lighting beside the shower
-3|928|1232|Oak vanity drawers, backlit mirror and shower niche under the skylight"
 
 
-NAME[custom-vanities]="Custom vanities"
-TITLE[custom-vanities]="Custom Bathroom Vanity Designs, Toronto"
-DESC[custom-vanities]="Three custom bathroom vanity designs by Renotect: shaker double vanity, flat-panel vanity with arched mirrors and a green double vanity with integrated lighting."
-INTRO[custom-vanities]="Three vanity designs, each with custom cabinetry sized to its room: a green double vanity with integrated lighting, a sage shaker double vanity with a centre linen tower, and a floating olive vanity with three arched mirrors."
-TYPE[custom-vanities]="Custom millwork"; LOC[custom-vanities]="Toronto and the GTA"; SCOPE[custom-vanities]="Vanity design, mirrors and lighting"
-IMGS[custom-vanities]="1|1024|1024|Green double vanity with drawers, stone top and mirrors with vertical lights
+NAME[custom-millwork]="Custom millwork"
+TITLE[custom-millwork]="Custom Millwork and Vanity Design, Toronto"
+DESC[custom-millwork]="Custom millwork designed by Renotect in Toronto and the GTA: vanities and built-in cabinetry sized to the room, with finishes, hardware and lighting planned together."
+INTRO[custom-millwork]="Custom millwork designed to fit the room exactly, with cabinetry, finishes, hardware and lighting planned as one piece. Shown here are three vanity designs: a green double vanity with integrated lighting, a sage shaker double vanity with a centre linen tower, and a floating olive vanity with three arched mirrors."
+TYPE[custom-millwork]="Custom millwork"; LOC[custom-millwork]="Toronto and the GTA"; SCOPE[custom-millwork]="Millwork design, finishes, mirrors and lighting"
+IMGS[custom-millwork]="1|1024|1024|Green double vanity with drawers, stone top and mirrors with vertical lights
 2|1024|1024|Sage shaker double vanity with a centre tower and black-framed mirrors
 3|1600|1600|Floating olive vanity with three arched backlit mirrors"
 
@@ -135,7 +127,7 @@ for i in "${!SLUGS[@]}"; do
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=7">
+<link rel="stylesheet" href="/css/site.css?v=8">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},
@@ -144,10 +136,11 @@ for i in "${!SLUGS[@]}"; do
 </script>
 </head>
 <body>
+<div class="offer"><div class="wrap"><span>Free initial consultation for projects in Toronto &amp; the GTA</span><a href="tel:+14372549794">Call (437) 254-9794</a></div></div>
 <header><div class="wrap">
 <a class="logo" href="/"><img src="/images/logo-horizontal.png" alt="Renotect" width="246" height="62"></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
-<nav id="site-nav"><a href="/#services">Services</a><a href="/#works">Projects</a><a href="/#process">Process</a><a href="/#about">About</a><a href="/#faq">FAQ</a><a class="nav-tel" href="tel:+14372549794">(437) 254-9794</a><a class="btn" href="/#contact">Book a consultation</a></nav>
+<nav id="site-nav"><a href="/#services">Services</a><a href="/#works">Projects</a><a href="/#process">Process</a><a href="/#about">About</a><a href="/#faq">FAQ</a><a class="nav-tel" href="tel:+14372549794">(437) 254-9794</a><a class="btn" href="/#contact">Free consultation</a></nav>
 </div></header>
 
 <main>
@@ -163,12 +156,13 @@ ${gallery}</div>
 
 <section class="contact" style="padding:64px 0"><div class="wrap" style="display:block">
 <h2>Planning something similar?</h2>
-<p class="lead">Tell us about your space and we will reply within one business day. Call <a href="tel:+14372549794">(437) 254-9794</a> or send a request.</p>
-<p style="margin-top:22px"><a class="btn" href="/#contact">Book a consultation</a></p>
+<p class="lead">Tell us about your space and we will reply within one business day. The first consultation is free. Call <a href="tel:+14372549794">(437) 254-9794</a> or send a request.</p>
+<p style="margin-top:22px"><a class="btn" href="/#contact">Book a free consultation</a></p>
 <nav class="more" aria-label="More projects"><a href="/projects/$prev/"><small>&larr; Previous project</small>${NAME[$prev]}</a><a href="/projects/$next/"><small>Next project &rarr;</small>${NAME[$next]}</a></nav>
 </div></section>
 </main>
 
+<div class="mbar"><a href="tel:+14372549794">Call</a><a href="/#contact">Free consultation</a></div>
 <footer><div class="wrap"><span>&copy; 2026 Renotect. Interior design and renovation, Etobicoke, Toronto, Ontario.</span><span><a href="tel:+14372549794">(437) 254-9794</a> · <a href="mailto:info@renotect.ca">info@renotect.ca</a></span></div></footer>
 
 <dialog class="lb" aria-label="Image viewer"><figure><img alt=""><figcaption></figcaption></figure><button class="x" type="button" aria-label="Close">&times;</button><button class="prev" type="button" aria-label="Previous image">&#8249;</button><button class="next" type="button" aria-label="Next image">&#8250;</button></dialog>

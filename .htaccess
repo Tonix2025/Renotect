@@ -10,6 +10,8 @@ RedirectMatch 404 ^/tools/
 # Old project address
 Redirect 301 /projects/green-kitchen-island/ https://www.renotect.ca/projects/silverfox-kitchen/
 Redirect 301 /projects/oak-green-kitchen/ https://www.renotect.ca/projects/silverfox-kitchen/
+Redirect 301 /projects/custom-vanities/ https://www.renotect.ca/projects/custom-millwork/
+Redirect 301 /projects/skylight-bathroom/ https://www.renotect.ca/
 
 # Images, CSS and JS are cached for a year (CSS/JS links carry ?v= so changes still show).
 # HTML is always re-checked so updates appear right away.

@@ -112,3 +112,30 @@ nav .btn{margin-top:22px;text-align:center;padding:16px 20px;font-size:12.5px}
 }
 .related{margin-top:14px;color:var(--muted)}.related a{color:var(--accent)}
 .gallery button.wide{grid-column:1/-1;aspect-ratio:auto}
+.offer{background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.offer .wrap{display:flex;justify-content:center;gap:10px 28px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;text-align:center}
+.offer a{color:var(--paper);text-decoration:none;border-bottom:1px solid currentColor}
+.perks{list-style:none;padding:0;margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.perks li:before{content:"";display:inline-block;width:14px;height:1px;background:var(--accent);vertical-align:middle;margin-right:10px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:44px}
+.why div{border-top:1px solid var(--ink);padding-top:18px}
+.why span{font:300 40px/1 'Cormorant Garamond',Georgia,serif;color:var(--accent);display:block;margin-bottom:10px}
+.why h3{font-size:25px;font-weight:500;margin-bottom:8px}.why p{color:var(--muted);font-size:15.5px}
+.band{background:var(--accent);color:#fff;padding:72px 0}
+.band .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.band h2{color:#fff;margin-bottom:12px}.band p{color:rgba(255,255,255,.85);max-width:56ch}
+.band .cta{justify-content:flex-end}
+.btn.light{background:#fff;color:var(--accent)}
+.btn.alt.light{background:none;color:#fff;border-color:#fff}
+.mbar{display:none}
+@media(max-width:860px){
+.why{grid-template-columns:1fr 1fr}
+.band .wrap{grid-template-columns:1fr}.band .cta{justify-content:flex-start}
+.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:6;border-top:1px solid var(--line)}
+.mbar a{padding:16px 10px;text-align:center;text-decoration:none;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--paper);color:var(--ink)}
+.mbar a+a{background:var(--accent);color:#fff}
+body{padding-bottom:52px}
+.offer span{display:none}
+}
+@media(max-width:560px){.why{grid-template-columns:1fr}}
+@media(prefers-color-scheme:dark){.band{background:#1f3b36}.btn.light{color:#1f3b36}}
