@@ -35,12 +35,13 @@
 {"@type":"Question","name":"Which areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We are based in Etobicoke and work across Toronto and the Greater Toronto Area, including North York, Mississauga and Vaughan."}}]}
 ]}
 </script>
-<link rel="stylesheet" href="/css/site.css?v=4">
+<link rel="stylesheet" href="/css/site.css?v=5">
 </head>
 <body>
 <header><div class="wrap">
 <a class="logo" href="/"><img src="images/logo-horizontal.png" alt="Renotect" width="246" height="62"></a>
-<nav><a href="#services">Services</a><a href="#works">Projects</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="btn" href="#contact">Book a consultation</a></nav>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
+<nav id="site-nav"><a href="#services">Services</a><a href="#works">Projects</a><a href="#process">Process</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="nav-tel" href="tel:+14372549794">(437) 254-9794</a><a class="btn" href="#contact">Book a consultation</a></nav>
 </div></header>
 
 <main id="top">
@@ -159,6 +160,7 @@
 
 <footer><div class="wrap"><span>&copy; 2026 Renotect. Interior design and renovation, Etobicoke, Toronto, Ontario.</span><span><a href="tel:+14372549794">(437) 254-9794</a> · <a href="mailto:info@renotect.ca">info@renotect.ca</a></span></div></footer>
 
+<script src="/js/site.js?v=1" defer></script>
 <script>
 // Paste your Formspree (or similar) endpoint here, e.g. "https://formspree.io/f/xxxxxxx".
 // While empty, the form opens the visitor's email app with the message pre-filled.
