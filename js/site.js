@@ -14,7 +14,7 @@
     input.addEventListener('input', update); update();
   });
 
-  const targets = document.querySelectorAll('section h2, .lead, .services > div, .works a, .why > div, .steps li, .timeline li, .gallery button, .ba, .facts, #faq details');
+  const targets = document.querySelectorAll('section h2, .lead, .svc li, .works a, .steps li, .facts-row li, .statement .big, .gallery button, .ba, .facts, #faq details');
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('js');
   const io = new IntersectionObserver(entries => entries.forEach(e => {
