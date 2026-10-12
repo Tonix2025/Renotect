@@ -144,7 +144,7 @@ for i in "${!SLUGS[@]}"; do
 <body>
 <div class="offer"><div class="wrap"><span>Free initial consultation for projects in Toronto &amp; the GTA</span><a href="tel:+14372549794">Call (437) 254-9794</a></div></div>
 <header><div class="wrap">
-<a class="logo" href="/"><img src="/images/logo-horizontal.png" alt="Renotect" width="246" height="62"></a>
+<a class="logo" href="/"><img src="/images/logo-renotect.png" alt="Renotect" width="522" height="132"></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span></button>
 <nav id="site-nav"><a href="/#services">Services</a><a href="/#works">Projects</a><a href="/#process">Process</a><a href="/#about">About</a><a href="/#faq">FAQ</a><a class="nav-tel" href="tel:+14372549794">(437) 254-9794</a><a class="btn" href="/#contact">Free consultation</a></nav>
 </div></header>
