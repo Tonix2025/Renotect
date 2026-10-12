@@ -16,7 +16,7 @@ IMGS[north-york-custom-home]="1|1600|900|Front elevation of the custom home in d
 
 NAME[maple-modern-kitchen]="Maple Modern Kitchen"
 TITLE[maple-modern-kitchen]="Maple Modern Kitchen, Vaughan: Design to Install"
-DESC[maple-modern-kitchen]="Maple Modern Kitchen in Vaughan: sage green shaker cabinetry, quartz and marble, warm wood and aged brass, for a 6,000 sq ft custom home. From concept and renders to installation."
+DESC[maple-modern-kitchen]="Maple Modern Kitchen in Vaughan: sage green shaker cabinets, quartz, marble and aged brass, from concept and renders to installation."
 INTRO[maple-modern-kitchen]="A modern kitchen for a 6,000 sq ft custom home in Vaughan. The concept pairs muted sage green shaker cabinetry with warm wood, light quartz and marble, and aged brass, for a calm room that will still feel right in twenty years. A long island with seating faces the cooking wall, tall cabinets keep the fridge, ovens and pantry built in flush, and a long picture window opens the room to the garden. The photos follow it from the first renders to cabinets and counters going in."
 TYPE[maple-modern-kitchen]="Kitchen for a new custom home"; LOC[maple-modern-kitchen]="Vaughan, Ontario"; SCOPE[maple-modern-kitchen]="Kitchen design, cabinetry and materials, site oversight"
 IMGS[maple-modern-kitchen]="1|1403|1121|Sage green kitchen with a large island, bar stools and full-height cabinetry
@@ -27,7 +27,7 @@ IMGS[maple-modern-kitchen]="1|1403|1121|Sage green kitchen with a large island, 
 
 NAME[custom-millwork]="Custom millwork"
 TITLE[custom-millwork]="Custom Millwork and Vanity Design, Toronto"
-DESC[custom-millwork]="Custom millwork designed by Renotect in Toronto and the GTA: vanities and built-in cabinetry sized to the room, with finishes, hardware and lighting planned together."
+DESC[custom-millwork]="Custom millwork and vanities designed by Renotect in Toronto and the GTA, with cabinetry, finishes, hardware and lighting planned together."
 INTRO[custom-millwork]="Custom millwork designed to fit the room exactly, with cabinetry, finishes, hardware and lighting planned as one piece. Shown here are three vanity designs: a green double vanity with integrated lighting, a sage shaker double vanity with a centre linen tower, and a floating olive vanity with three arched mirrors."
 TYPE[custom-millwork]="Custom millwork"; LOC[custom-millwork]="Toronto and the GTA"; SCOPE[custom-millwork]="Millwork design, finishes, mirrors and lighting"
 IMGS[custom-millwork]="1|1024|1024|Green double vanity with drawers, stone top and mirrors with vertical lights
@@ -37,7 +37,7 @@ IMGS[custom-millwork]="1|1024|1024|Green double vanity with drawers, stone top a
 # Construction photos (optional per project): "site-N|width|height|alt", files images/projects/<slug>-site-N.jpg
 NAME[silverfox-custom-home]="Silverfox Place custom home, Vaughan"
 TITLE[silverfox-custom-home]="Modern 6,000 sq ft Custom Home in Vaughan"
-DESC[silverfox-custom-home]="A modern 6,000 sq ft custom home on Silverfox Place in Vaughan: black aluminum, floated wood panels and a white stone base. Interior and facade design and construction oversight by Renotect."
+DESC[silverfox-custom-home]="Modern 6,000 sq ft custom home in Vaughan: black aluminum, wood panels and white stone. Interior and facade design and site oversight."
 INTRO[silverfox-custom-home]="A modern home of about 6,000 sq ft on Silverfox Place in Vaughan, Ontario. The facade is built from clean geometry and a tight palette: black aluminum cladding frames the structure, floated wood panels add warmth and a vertical rhythm to the upper floor, a white stone base grounds the house, and silver aluminum trim sharpens the edges. Wall-mounted lights wash the materials and mark the entries after dark. Renotect designed the interiors and the facade, and oversaw the work on site through construction so the build followed the design."
 TYPE[silverfox-custom-home]="New custom home, approx. 6,000 sq ft"; LOC[silverfox-custom-home]="Vaughan, Ontario"; SCOPE[silverfox-custom-home]="Interior design, facade design, construction oversight"
 IMGS[silverfox-custom-home]="1|1800|670|Render of the front facade: black aluminum, floated wood panels, white stone base and a flat roof with deep overhangs"

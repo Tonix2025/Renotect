@@ -4,6 +4,8 @@ RewriteCond %{HTTP_HOST} ^renotect\.ca$ [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://www.renotect.ca/$1 [R=301,L]
 
+ErrorDocument 404 /404.html
+
 # Build scripts in the repo are not part of the website
 RedirectMatch 404 ^/tools/
 
