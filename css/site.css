@@ -165,3 +165,7 @@ body{padding-bottom:52px}
 .cfloat .tel{background:var(--accent)}
 @media(max-width:860px){.cfloat{display:none}}
 @media(max-width:860px){.mbar a{font-size:11.5px;letter-spacing:.08em;padding:16px 6px;white-space:nowrap}}
+.contact-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.contact-btns .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px}
+.contact-btns svg{width:18px;height:18px;flex:none}
+.btn.wa-btn{background:#1f8f4e}
