@@ -185,3 +185,11 @@ body{padding-bottom:52px}
 .mbar .pick-menu a{padding:14px}
 }
 @media(max-width:860px){.mbar{background:var(--paper)}.mbar .pick{background:var(--paper);height:100%}}
+.clist{list-style:none;padding:0;margin-top:30px;border-top:1px solid var(--line)}
+.clist li{border-bottom:1px solid var(--line)}
+.clist a,.clist li>div{display:flex;align-items:center;gap:18px;padding:16px 0;text-decoration:none;color:var(--ink)}
+.clist a:hover .ci{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.clist .ci{width:44px;height:44px;flex:none;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background .25s,color .25s,border-color .25s}
+.clist .ci svg{width:19px;height:19px}
+.clist small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.clist span{line-height:1.4}
