@@ -14,7 +14,7 @@
     input.addEventListener('input', update); update();
   });
 
-  const targets = document.querySelectorAll('section h2, .lead, .services > div, .works a, .why > div, .steps li, .timeline li, .gallery button, .ba, .facts, details');
+  const targets = document.querySelectorAll('section h2, .lead, .services > div, .works a, .why > div, .steps li, .timeline li, .gallery button, .ba, .facts, #faq details');
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   document.documentElement.classList.add('js');
   const io = new IntersectionObserver(entries => entries.forEach(e => {
@@ -28,3 +28,11 @@
     io.observe(el);
   });
 })();
+
+// Contact chooser: close an open WhatsApp/phone menu when tapping elsewhere or pressing Esc.
+document.addEventListener('click', e => {
+  document.querySelectorAll('details.pick[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('details.pick[open]').forEach(d => d.open = false);
+});
