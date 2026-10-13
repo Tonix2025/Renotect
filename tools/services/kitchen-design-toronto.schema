@@ -1,0 +1,5 @@
+{"@type":"Service","name":"Kitchen design","serviceType":"Kitchen design and renovation","provider":{"@id":"https://www.renotect.ca/#business"},"areaServed":[{"@type":"City","name":"Toronto"},{"@type":"City","name":"Vaughan"},{"@type":"Place","name":"Greater Toronto Area"}],"url":"https://www.renotect.ca/services/kitchen-design-toronto/"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Can you work with my contractor or cabinet maker?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our drawings and selections are prepared so a contractor or cabinet maker can price and build from them."}},
+{"@type":"Question","name":"Does a kitchen renovation need a permit?","acceptedAnswer":{"@type":"Answer","text":"Replacing cabinets in the same layout usually does not. Moving walls, adding or moving plumbing or gas, or changing the structure usually does. We tell you at the start and prepare the permit drawings if they are needed."}},
+{"@type":"Question","name":"Do you design kitchens as part of a larger renovation?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many of our kitchens are part of a full-home renovation or a new custom home."}}]}

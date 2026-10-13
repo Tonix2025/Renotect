@@ -254,3 +254,6 @@ body{padding-bottom:52px}
 .hero2{min-height:min(calc(100vh - 115px),760px)}
 .hero2:before{background:linear-gradient(90deg,rgba(12,15,17,.72) 0%,rgba(12,15,17,.45) 45%,rgba(12,15,17,.08) 80%),linear-gradient(180deg,rgba(12,15,17,0) 55%,rgba(12,15,17,.45) 100%)}
 @media(max-width:860px){.hero2:before{background:linear-gradient(180deg,rgba(12,15,17,.25) 0%,rgba(12,15,17,.55) 45%,rgba(12,15,17,.82) 100%)}}
+.svc h3 a{text-decoration:none;color:inherit;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
+.svc h3 a:after{content:" \2192";font-size:.7em;color:var(--accent)}
+.svc h3 a:hover{background-size:100% 1px}
