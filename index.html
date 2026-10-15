@@ -37,7 +37,7 @@
 {"@type":"Question","name":"Which areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We are based in Etobicoke and work across Toronto and the Greater Toronto Area, including North York, Mississauga and Vaughan."}}]}
 ]}
 </script>
-<link rel="stylesheet" href="/css/site.css?v=21">
+<link rel="stylesheet" href="/css/site.css?v=22">
 </head>
 <body>
 <div class="offer"><div class="wrap"><span>Free initial consultation for projects in Toronto &amp; the GTA</span><a href="tel:+14372549794">Call (437) 254-9794</a></div></div>
@@ -101,11 +101,45 @@
 </div></section>
 
 <section id="compare"><div class="wrap">
-<div class="sec-head"><div><span class="eyebrow">Design to reality</span>
+<div class="sec-head"><div><span class="eyebrow">Before and design</span>
 <h2>From empty room to finished design</h2></div>
-<p class="lead">Drag the line to compare the Maple Modern Kitchen as an empty room with our design for it.</p></div>
-<div class="ba"><img src="/images/projects/maple-modern-kitchen-compare-design.jpg" alt="Design render of the Maple Modern Kitchen" width="1400" height="787" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/maple-modern-kitchen-compare-before.jpg" alt="The Maple Modern Kitchen as an empty room before cabinetry" width="1280" height="721" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the empty room with the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
-<p class="compare-more"><a href="/projects/maple-modern-kitchen/">See the full project, from framing to installation &rarr;</a></p>
+<p class="lead">Choose a room, then drag the line to compare the space on site with our design for it.</p></div>
+<div class="ba-tabs" role="tablist" aria-label="Before and design comparisons">
+<button type="button" role="tab" aria-selected="true" aria-controls="ba-kitchen" id="tab-kitchen">Kitchen</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="ba-living" id="tab-living" tabindex="-1">Living and dining</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="ba-dining" id="tab-dining" tabindex="-1">Dining room</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="ba-fireplace" id="tab-fireplace" tabindex="-1">Fireplace wall</button>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-kitchen" aria-labelledby="tab-kitchen">
+<div class="ba"><img src="/images/projects/maple-modern-kitchen-compare-design.jpg" alt="Design render of the Maple Modern Kitchen" width="1400" height="787" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/maple-modern-kitchen-compare-before.jpg" alt="The Maple Modern Kitchen as an empty room before cabinetry" width="1280" height="721" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the kitchen before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+<p class="compare-more"><a href="/projects/maple-modern-kitchen/">Maple Modern Kitchen: from framing to installation &rarr;</a></p>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-living" aria-labelledby="tab-living" hidden>
+<div class="ba" style="aspect-ratio:1600/784"><img src="/images/projects/ba-living-design.jpg" alt="Design render of an open living and dining room with a glass-roofed dining area and marble floors" width="1600" height="786" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/ba-living-before.jpg" alt="The living and dining room on site before finishes, with the floor membrane down" width="1600" height="784" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the living and dining room before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-dining" aria-labelledby="tab-dining" hidden>
+<div class="ba ba-narrow" style="aspect-ratio:887/616;max-width:900px"><img src="/images/projects/ba-dining-design.jpg" alt="Design render of a dining room with a fluted wood feature wall, linear pendant and wine wall" width="887" height="616" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/ba-dining-before.jpg" alt="The dining room on site during construction" width="887" height="616" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the dining room before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-fireplace" aria-labelledby="tab-fireplace" hidden>
+<div class="ba ba-narrow" style="aspect-ratio:682/610;max-width:720px"><img src="/images/projects/ba-fireplace-design.jpg" alt="Design render of a black marble fireplace wall with wood panelling and lit shelves" width="682" height="610" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/ba-fireplace-before.jpg" alt="The fireplace wall on site with the marble installed and the room under construction" width="682" height="610" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the fireplace wall before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+</div>
+<script>
+(() => {
+  const tabs = [...document.querySelectorAll('.ba-tabs [role=tab]')];
+  const pick = t => tabs.forEach(b => {
+    const on = b === t;
+    b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+    document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+  });
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => pick(b));
+    b.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); }
+    });
+  });
+})();
+</script>
 </div></section>
 
 <section id="services"><div class="wrap">

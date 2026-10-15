@@ -257,3 +257,10 @@ body{padding-bottom:52px}
 .svc h3 a{text-decoration:none;color:inherit;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s}
 .svc h3 a:after{content:" \2192";font-size:.7em;color:var(--accent)}
 .svc h3 a:hover{background-size:100% 1px}
+.ba-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.ba-tabs button{font:400 12px 'Jost',sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:10px 18px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.ba-tabs button:hover{border-color:var(--ink)}
+.ba-tabs button[aria-selected=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ba-panel .ba{margin-top:20px}
+.ba-narrow{margin-left:auto;margin-right:auto}
+@media(max-width:560px){.ba-tabs button{padding:9px 12px;font-size:11px;letter-spacing:.1em}}
