@@ -1,0 +1,36 @@
+<section style="padding-top:0"><div class="wrap">
+<div class="sec-head"><div><span class="eyebrow">Interiors</span>
+<h2>Before and design</h2></div>
+<p class="lead">Rooms of the house on site, compared with our interior design for them. Choose a room, then drag the line.</p></div>
+<div class="ba-tabs" role="tablist" aria-label="Before and design comparisons">
+<button type="button" role="tab" aria-selected="true" aria-controls="ba-living" id="tab-living">Living and dining</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="ba-dining" id="tab-dining" tabindex="-1">Dining room</button>
+<button type="button" role="tab" aria-selected="false" aria-controls="ba-fireplace" id="tab-fireplace" tabindex="-1">Fireplace wall</button>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-living" aria-labelledby="tab-living">
+<div class="ba" style="aspect-ratio:1600/784"><img src="/images/projects/ba-living-design.jpg" alt="Design render of an open living and dining room with a glass-roofed dining area and marble floors" width="1600" height="786" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/ba-living-before.jpg" alt="The living and dining room on site before finishes, with the floor membrane down" width="1600" height="784" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the living and dining room before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-dining" aria-labelledby="tab-dining" hidden>
+<div class="ba ba-narrow" style="aspect-ratio:887/616;max-width:900px"><img src="/images/projects/ba-dining-design.jpg" alt="Design render of a dining room with a fluted wood feature wall, linear pendant and wine wall" width="887" height="616" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/ba-dining-before.jpg" alt="The dining room on site during construction" width="887" height="616" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the dining room before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+</div>
+<div class="ba-panel" role="tabpanel" id="ba-fireplace" aria-labelledby="tab-fireplace" hidden>
+<div class="ba ba-narrow" style="aspect-ratio:682/610;max-width:720px"><img src="/images/projects/ba-fireplace-design.jpg" alt="Design render of a black marble fireplace wall with wood panelling and lit shelves" width="682" height="610" loading="lazy" decoding="async"><div class="ba-before"><img src="/images/projects/ba-fireplace-before.jpg" alt="The fireplace wall on site with the marble installed and the room under construction" width="682" height="610" loading="lazy" decoding="async"></div><input type="range" min="0" max="100" value="50" aria-label="Compare the fireplace wall before and in the design"><span class="ba-knob" aria-hidden="true">‹ ›</span><span class="ba-tag l">Before</span><span class="ba-tag r">Design</span></div>
+</div>
+<script>
+(() => {
+  const tabs = [...document.querySelectorAll('.ba-tabs [role=tab]')];
+  const pick = t => tabs.forEach(b => {
+    const on = b === t;
+    b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+    document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+  });
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => pick(b));
+    b.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); }
+    });
+  });
+})();
+</script>
+</div></section>

@@ -105,6 +105,7 @@ for i in "${!SLUGS[@]}"; do
     IFS="|" read -r da dw dh dalt ba bw bh balt tl tr <<< "${BA[$s]}"
     compare="<div class=\"wrap\" style=\"padding-bottom:56px\"><h2 style=\"font-size:36px;margin:0\">Before and design</h2><p class=\"lead\">Drag the line to compare the empty room with the design.</p><div class=\"ba\"><img src=\"/images/projects/$ba\" alt=\"$balt\" width=\"$bw\" height=\"$bh\" decoding=\"async\"><div class=\"ba-before\"><img src=\"/images/projects/$da\" alt=\"$dalt\" width=\"$dw\" height=\"$dh\" decoding=\"async\"></div><input type=\"range\" min=\"0\" max=\"100\" value=\"50\" aria-label=\"Compare the room before with the design\"><span class=\"ba-knob\" aria-hidden=\"true\">‹ ›</span><span class=\"ba-tag l\">$tl</span><span class=\"ba-tag r\">$tr</span></div></div>"
   fi
+  extra=""; [ -f "tools/extra/$s.html" ] && extra=$(cat "tools/extra/$s.html")
   mats=""
   if [ -n "${MATS[$s]}" ]; then
     while IFS='|' read -r k v; do mats+="<li><b>$k</b>$v</li>"; done <<< "${MATS[$s]}"
@@ -160,6 +161,7 @@ for i in "${!SLUGS[@]}"; do
 ${compare}
 <div class="wrap gallery">
 ${gallery}</div>
+${extra}
 
 <section class="contact" style="padding:64px 0"><div class="wrap" style="display:block">
 <h2>Planning something similar?</h2>
