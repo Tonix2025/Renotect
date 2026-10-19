@@ -27,10 +27,10 @@ for meta in tools/services/*.meta; do
 <meta name="description" content="$DESC">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#2d5a52">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png?v=2">
 <link rel="canonical" href="$url">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Renotect">
