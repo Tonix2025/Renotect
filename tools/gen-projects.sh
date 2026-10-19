@@ -121,7 +121,10 @@ for i in "${!SLUGS[@]}"; do
 <meta name="description" content="${DESC[$s]}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#2d5a52">
-<link rel="icon" href="/images/logo.ico">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="canonical" href="$url">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Renotect">
