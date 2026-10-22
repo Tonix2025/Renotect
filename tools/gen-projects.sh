@@ -1,9 +1,9 @@
 #!/bin/bash
 # Builds projects/<slug>/index.html from the data below. Run from the repo root.
 set -e
-SLUGS=(north-york-custom-home silverfox-custom-home maple-modern-kitchen custom-millwork)
+SLUGS=(north-york-custom-home silverfox-custom-home maple-modern-kitchen richmond-hill-kitchen custom-millwork)
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
-declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [maple-modern-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
+declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [maple-modern-kitchen]="Millwork &amp; Kitchen" [richmond-hill-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
 
 NAME[north-york-custom-home]="Custom home facade design, North York"
 TITLE[north-york-custom-home]="Custom Home Facade Design in North York"
@@ -22,6 +22,15 @@ TYPE[maple-modern-kitchen]="Kitchen for a new custom home"; LOC[maple-modern-kit
 IMGS[maple-modern-kitchen]="1|1403|1121|Sage green kitchen with a large island, bar stools and full-height cabinetry
 2|1402|1122|Two views of the kitchen: the island and window wall, and the gas range with open shelves
 3|1500|1060|Design concept board with the colour palette, materials and finishes, inspiration images and cabinet elevations"
+
+NAME[richmond-hill-kitchen]="Richmond Hill Kitchen"
+TITLE[richmond-hill-kitchen]="Modern Kitchen Design in Richmond Hill"
+DESC[richmond-hill-kitchen]="Modern kitchen for a new custom home in Richmond Hill: walnut and grey cabinetry, a waterfall stone island and a stone hood. Design and site oversight."
+INTRO[richmond-hill-kitchen]="A modern kitchen for a new custom home in Richmond Hill. Two finishes do most of the work: matte grey flat-panel cabinetry for the tall walls and perimeter, and warm walnut-tone wood for the island and the upper cabinets either side of the window wall. A large island wrapped in light veined stone, with waterfall ends to the floor, sits under a stepped ceiling. The same stone runs up the backsplash and clads the range hood, which is framed by two tall black windows. Tall cabinets keep the fridge and storage built in, and a walnut display unit with glass shelves closes the kitchen off from the next room. Renotect designed the kitchen and followed the work on site through installation."
+TYPE[richmond-hill-kitchen]="Kitchen for a new custom home"; LOC[richmond-hill-kitchen]="Richmond Hill, Ontario"; SCOPE[richmond-hill-kitchen]="Kitchen design, cabinetry and materials, site oversight"
+IMGS[richmond-hill-kitchen]="1|1280|960|Modern kitchen with a walnut island under a waterfall stone top, grey cabinetry and a stone range hood
+2|1280|960|Wide view of the kitchen with a walnut display unit, tall grey cabinets and the island in front of the window wall
+3|1280|960|The kitchen seen from the next room, framed by the walnut display unit with vertical dividers and glass shelves"
 
 
 
@@ -71,7 +80,10 @@ declare -A BA=([maple-modern-kitchen]="maple-modern-kitchen-compare-before.jpg|1
 declare -A MATS=([maple-modern-kitchen]="Cabinets|Sage green shaker
 Counters|Natural white quartz
 Backsplash|White marble
-Accents|Warm wood wall and ceiling, aged brass hardware")
+Accents|Warm wood wall and ceiling, aged brass hardware" [richmond-hill-kitchen]="Cabinets|Matte grey flat panel and walnut-tone wood
+Island|Light veined stone with waterfall ends
+Backsplash and hood|Matching stone, full height
+Details|Black hardware and pot filler, glass display shelves")
 declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/maple-modern-kitchen/\">Maple Modern Kitchen</a>" [maple-modern-kitchen]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home in Vaughan</a>")
 
 items() { # slug, data, first-image-eager(1/0)
@@ -137,7 +149,7 @@ for i in "${!SLUGS[@]}"; do
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=23">
+<link rel="stylesheet" href="/css/site.css?v=24">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},
