@@ -5,8 +5,8 @@ SLUGS=(north-york-custom-home silverfox-custom-home maple-modern-kitchen custom-
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
 declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [maple-modern-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
 
-NAME[north-york-custom-home]="Custom home facade, North York"
-TITLE[north-york-custom-home]="Custom Home Facade Design, North York"
+NAME[north-york-custom-home]="Custom home facade design, North York"
+TITLE[north-york-custom-home]="Custom Home Facade Design in North York"
 DESC[north-york-custom-home]="Facade design for a new custom home in North York: limestone-style cladding, slate mansard roof, black-framed windows and planned exterior lighting."
 INTRO[north-york-custom-home]="Exterior design for a new custom home on McGillivray Avenue in North York. The front elevation pairs smooth limestone-style cladding with a dark slate mansard roof, tall black-framed windows and a double garage. Lighting was planned as part of the design, with soffit pot lights and wall sconces that frame the windows after dark."
 TYPE[north-york-custom-home]="New custom home"; LOC[north-york-custom-home]="North York, Toronto"; SCOPE[north-york-custom-home]="Facade design, exterior lighting, 3D visuals"
@@ -137,7 +137,7 @@ for i in "${!SLUGS[@]}"; do
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/site.css?v=22">
+<link rel="stylesheet" href="/css/site.css?v=23">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},

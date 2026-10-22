@@ -264,3 +264,6 @@ body{padding-bottom:52px}
 .ba-panel .ba{margin-top:20px}
 .ba-narrow{margin-left:auto;margin-right:auto}
 @media(max-width:560px){.ba-tabs button{padding:9px 12px;font-size:11px;letter-spacing:.1em}}
+.prose p+p{margin-top:16px}
+.layouts{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-top:36px}.layouts h3{font-size:26px;font-weight:500;margin-bottom:8px}.layouts p{color:var(--muted)}
+@media(max-width:760px){.layouts{grid-template-columns:1fr}}
