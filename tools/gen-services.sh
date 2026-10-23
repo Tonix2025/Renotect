@@ -62,6 +62,7 @@ $(cat "tools/services/$slug.body")
 
 $chrome_bottom
 <script $js defer></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "946342b24b31420795143ec7a0da7c2f"}'></script>
 </body>
 </html>
 EOF
