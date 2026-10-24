@@ -52,10 +52,16 @@ TYPE[silverfox-custom-home]="New custom home, approx. 6,000 sq ft"; LOC[silverfo
 IMGS[silverfox-custom-home]="1|1800|670|Render of the front facade: black aluminum, floated wood panels, white stone base and a flat roof with deep overhangs"
 
 declare -A SITE SITE_INTRO
-SITE[north-york-custom-home]="site-3|1280|677|Front of the house during construction, with the third-floor dormers framed and the walls sheathed
+SITE[north-york-custom-home]="site-4|721|1280|The front of the house with the stone-look facade, cornices and slate mansard roof in place
+site-5|721|1280|Angled view of the finished facade, with the entrance porch and tall black-framed windows
+site-6|721|1280|The entrance porch with its columns and stone steps, before the front door goes in
+site-7|721|1280|Looking up at the facade: window surrounds, cornices and the dormers in the mansard roof
+site-8|721|1280|Side view of the stone cladding, window trim and dormer
+site-9|721|1280|The house from the street behind the trees, with the facade complete
+site-3|1280|677|Front of the house during construction, with the third-floor dormers framed and the walls sheathed
 site-2|1280|677|Angled view of the framed and sheathed house, showing the dormer framing and roof trusses
 site-1|1280|721|Closer view of the front during construction, with window openings boarded and the front steps in place"
-SITE_INTRO[north-york-custom-home]="Photos from site during construction, with the upper floors framed and sheathed."
+SITE_INTRO[north-york-custom-home]="The house today, with the stone-look facade, trim and windows in place, followed by earlier photos of the upper floors framed and sheathed."
 SITE[silverfox-custom-home]="site-1|1280|721|Front of the modern home during construction, with the windows installed and the walls wrapped
 site-2|1280|721|Wide view of the front elevation, showing the deep roof overhang and the walk-out lower level
 site-3|1280|721|Front of the house with large upper windows and the entry framed, during construction
