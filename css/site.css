@@ -269,3 +269,5 @@ body{padding-bottom:52px}
 @media(max-width:760px){.layouts{grid-template-columns:1fr}}
 .works.works3{grid-template-columns:repeat(3,1fr)}.works.works3 a,.works.works3 a:first-child{grid-row:auto;grid-column:auto;aspect-ratio:16/10;min-height:0}
 @media(max-width:760px){.works.works3{grid-template-columns:1fr}}
+.prose ul{padding-left:22px;margin:12px 0}.prose li{margin:6px 0}.prose h2{margin-top:40px}.prose h2:first-child{margin-top:0}
+.guide-list{list-style:none;padding:0;margin-top:36px;display:grid;gap:18px}.guide-list a{display:block;padding:24px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:inherit}.guide-list a:hover{border-color:var(--ink)}.guide-list h3{font-size:28px;font-weight:500;margin:8px 0}.guide-list p{color:var(--muted)}

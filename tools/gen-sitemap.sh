@@ -9,6 +9,10 @@ today=$(date +%F)
   for d in services/*/; do
     echo "  <url><loc>https://www.renotect.ca/services/$(basename "$d")/</loc><lastmod>$today</lastmod></url>"
   done
+  echo "  <url><loc>https://www.renotect.ca/guides/</loc><lastmod>$today</lastmod></url>"
+  for d in guides/*/; do
+    echo "  <url><loc>https://www.renotect.ca/guides/$(basename "$d")/</loc><lastmod>$today</lastmod></url>"
+  done
   for d in projects/*/; do
     s=$(basename "$d")
     echo "  <url>"
