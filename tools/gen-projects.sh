@@ -90,7 +90,7 @@ Accents|Warm wood wall and ceiling, aged brass hardware" [richmond-hill-kitchen]
 Island|Light veined stone with waterfall ends
 Backsplash and hood|Matching stone, full height
 Details|Black hardware and pot filler, glass display shelves")
-declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/maple-modern-kitchen/\">Maple Modern Kitchen</a>" [maple-modern-kitchen]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home in Vaughan</a>")
+declare -A RELATED=([silverfox-custom-home]="The kitchen for this home: <a href=\"/projects/maple-modern-kitchen/\">Maple Modern Kitchen</a>" [maple-modern-kitchen]="This kitchen is part of the <a href=\"/projects/silverfox-custom-home/\">Silverfox Place custom home in Vaughan</a>" [custom-millwork]="Planning a bathroom? See our <a href=\"/services/bathroom-renovation-toronto/\">bathroom renovation and design</a> service.")
 
 items() { # slug, data, first-image-eager(1/0)
   local out="" n w h alt lazy
