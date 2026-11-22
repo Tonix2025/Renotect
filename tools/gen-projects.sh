@@ -5,11 +5,11 @@ SLUGS=(north-york-custom-home silverfox-custom-home maple-modern-kitchen richmon
 declare -A NAME TITLE DESC INTRO TYPE LOC SCOPE IMGS
 declare -A CAT=([silverfox-custom-home]="Residential" [north-york-custom-home]="Residential" [maple-modern-kitchen]="Millwork &amp; Kitchen" [richmond-hill-kitchen]="Millwork &amp; Kitchen" [custom-millwork]="Millwork &amp; Kitchen")
 
-NAME[north-york-custom-home]="Custom home facade design, North York"
-TITLE[north-york-custom-home]="Custom Home Facade Design in North York"
-DESC[north-york-custom-home]="Facade design for a new custom home in North York: limestone-style cladding, slate mansard roof, black-framed windows and planned exterior lighting."
+NAME[north-york-custom-home]="Custom home design, North York"
+TITLE[north-york-custom-home]="Custom Home Design in North York: New House Facade"
+DESC[north-york-custom-home]="Custom home design in North York: a new house with a limestone-style facade, slate mansard roof and black-framed windows, from 3D design to the finished front."
 INTRO[north-york-custom-home]="Exterior design for a new custom home on McGillivray Avenue in North York. The front elevation pairs smooth limestone-style cladding with a dark slate mansard roof, tall black-framed windows and a double garage. Lighting was planned as part of the design, with soffit pot lights and wall sconces that frame the windows after dark."
-TYPE[north-york-custom-home]="New custom home"; LOC[north-york-custom-home]="North York, Toronto"; SCOPE[north-york-custom-home]="Facade design, exterior lighting, 3D visuals"
+TYPE[north-york-custom-home]="New custom home"; LOC[north-york-custom-home]="North York, Toronto"; SCOPE[north-york-custom-home]="House exterior and facade design, exterior lighting, 3D visuals"
 IMGS[north-york-custom-home]="1|1600|900|Front elevation of the custom home in daylight, with stone steps and a double garage
 2|1600|900|The same facade at dusk with soffit lights and wall sconces on
 3|1600|900|Close-up of the upper window, stone surround and lit soffits"
@@ -123,6 +123,7 @@ for i in "${!SLUGS[@]}"; do
     IFS="|" read -r da dw dh dalt ba bw bh balt tl tr <<< "${BA[$s]}"
     compare="<div class=\"wrap\" style=\"padding-bottom:56px\"><h2 style=\"font-size:36px;margin:0\">Before and design</h2><p class=\"lead\">Drag the line to compare the empty room with the design.</p><div class=\"ba\"><img src=\"/images/projects/$ba\" alt=\"$balt\" width=\"$bw\" height=\"$bh\" decoding=\"async\"><div class=\"ba-before\"><img src=\"/images/projects/$da\" alt=\"$dalt\" width=\"$dw\" height=\"$dh\" decoding=\"async\"></div><input type=\"range\" min=\"0\" max=\"100\" value=\"50\" aria-label=\"Compare the room before with the design\"><span class=\"ba-knob\" aria-hidden=\"true\">‹ ›</span><span class=\"ba-tag l\">$tl</span><span class=\"ba-tag r\">$tr</span></div></div>"
   fi
+  schema=""; [ -f "tools/extra/$s.schema" ] && schema=",$(cat "tools/extra/$s.schema")"
   extra=""; [ -f "tools/extra/$s.html" ] && extra=$(cat "tools/extra/$s.html")
   mats=""
   if [ -n "${MATS[$s]}" ]; then
@@ -159,7 +160,7 @@ for i in "${!SLUGS[@]}"; do
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.renotect.ca/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://www.renotect.ca/#works"},{"@type":"ListItem","position":3,"name":"${NAME[$s]}","item":"$url"}]},
-{"@type":"CreativeWork","name":"${NAME[$s]}","description":"${DESC[$s]}","url":"$url","image":"https://www.renotect.ca/images/projects/$first.jpg","creator":{"@id":"https://www.renotect.ca/#business"},"locationCreated":{"@type":"Place","name":"${LOC[$s]}"}}
+{"@type":"CreativeWork","name":"${NAME[$s]}","description":"${DESC[$s]}","url":"$url","image":"https://www.renotect.ca/images/projects/$first.jpg","creator":{"@id":"https://www.renotect.ca/#business"},"locationCreated":{"@type":"Place","name":"${LOC[$s]}"}}${schema}
 ]}
 </script>
 </head>
