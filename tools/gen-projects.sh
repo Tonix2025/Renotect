@@ -74,8 +74,12 @@ site-9|721|1280|Corner of the house with the roof overhang and lower-level windo
 site-10|721|1280|Stone cladding starting at the base of the wall
 site-11|1280|721|Side of the house with the large lower-level windows installed
 site-12|721|1280|Front entry and steps, with the upper balcony framed
-site-13|1280|721|Side entry steps and the wrapped walls, with the woods behind the house"
-SITE_INTRO[silverfox-custom-home]="Photos from site visits during construction, after the windows went in and before the exterior finishes."
+site-13|1280|721|Side entry steps and the wrapped walls, with the woods behind the house
+site-14|1280|721|The lower level with porcelain floors, a coffered ceiling and a large sliding door to the sunken courtyard
+site-15|1280|721|Lower-level kitchen island and fireplace wall, with daylight from the sliding door and windows
+site-16|1280|721|Windows and a sliding door that bring daylight into the lower level from the courtyard
+site-17|1280|721|The open lower level during finishing, with the marble-look fireplace wall and coffered ceilings"
+SITE_INTRO[silverfox-custom-home]="Photos from site visits: the exterior after the windows went in, then the walk-out lower level during finishing."
 SITE[maple-modern-kitchen]="site-1|1280|721|The kitchen area during framing, with the long window already in place
 site-2|1280|721|The kitchen as an empty shell, with the ceiling details built and the floor prepared
 site-3|1280|721|Cabinetry and islands installed, with sage green lower cabinets and tall taupe units
